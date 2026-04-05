@@ -170,9 +170,9 @@ Whether you're managing IT support tickets, customer inquiries, or internal requ
 
 ```
 ┌─────────────────┐     HTTPS      ┌──────────────────┐     TCP       ┌─────────────┐
-│                 │ ──────────────▶                   ─────────────▶ │             │
+│                 │ ──────────────▶|                  | ─────────────▶│             │
 │  React Frontend │                │  .NET 8 API      │               │ PostgreSQL  │
-│  (Vercel)       │ ◀──────────────   (Render)         ◀─────────────│ (Neon)      │
+│  (Vercel)       │ ◀──────────────|   (Render)       |  ◀────────────│ (Neon)      │
 │                 │   REST + WS    │                  │    EF Core    │             │
 └─────────────────┘                └──────────────────┘               └─────────────┘
 ```
