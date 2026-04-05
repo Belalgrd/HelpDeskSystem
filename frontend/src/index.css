@@ -1,0 +1,390 @@
+@import "tailwindcss";
+
+/* Enable class-based dark mode for Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Define custom theme for Tailwind v4 */
+@theme {
+    --color-primary-50: #eff6ff;
+    --color-primary-100: #dbeafe;
+    --color-primary-200: #bfdbfe;
+    --color-primary-300: #93c5fd;
+    --color-primary-400: #60a5fa;
+    --color-primary-500: #3b82f6;
+    --color-primary-600: #2563eb;
+    --color-primary-700: #1d4ed8;
+    --color-primary-800: #1e40af;
+    --color-primary-900: #1e3a8a;
+    --color-primary-950: #172554;
+}
+
+/* Input and Select base styles with dark mode */
+.input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid #d1d5db;
+    background-color: #ffffff;
+    color: #111827;
+    transition: all 0.15s ease-in-out;
+}
+
+    .input:focus {
+        outline: none;
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    .input::placeholder {
+        color: #9ca3af;
+    }
+
+/* Dark mode styles for input */
+.dark .input {
+    background-color: #374151;
+    border-color: #4b5563;
+    color: #f9fafb;
+}
+
+    .dark .input:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    }
+
+    .dark .input::placeholder {
+        color: #9ca3af;
+    }
+
+/* Select dropdown options dark mode */
+.dark select option {
+    background-color: #374151;
+    color: #f9fafb;
+}
+
+/* Button base styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    border-radius: 0.5rem;
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+    .btn:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+    }
+
+    .btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+/* Primary button */
+.btn-primary {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: 1px solid transparent;
+}
+
+    .btn-primary:hover:not(:disabled) {
+        background-color: #1d4ed8;
+    }
+
+/* Secondary button */
+.btn-secondary {
+    background-color: #ffffff;
+    color: #374151;
+    border: 1px solid #d1d5db;
+}
+
+    .btn-secondary:hover:not(:disabled) {
+        background-color: #f9fafb;
+    }
+
+.dark .btn-secondary {
+    background-color: #374151;
+    color: #f9fafb;
+    border-color: #4b5563;
+}
+
+    .dark .btn-secondary:hover:not(:disabled) {
+        background-color: #4b5563;
+    }
+
+/* Ghost button */
+.btn-ghost {
+    background-color: transparent;
+    color: #374151;
+    border: 1px solid transparent;
+}
+
+    .btn-ghost:hover:not(:disabled) {
+        background-color: #f3f4f6;
+    }
+
+.dark .btn-ghost {
+    color: #d1d5db;
+}
+
+    .dark .btn-ghost:hover:not(:disabled) {
+        background-color: #374151;
+    }
+
+/* Card styles */
+.card {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.dark .card {
+    background-color: #1f2937;
+    border-color: #374151;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+    }
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+    .dark ::-webkit-scrollbar-thumb:hover {
+        background: #64748b;
+    }
+
+/* Line clamp utilities */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    font-weight: 500;
+}
+
+/* Modal overlay */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+
+.dark .modal-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Badge styles */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.125rem 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 9999px;
+}
+
+/* Animation utilities */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Textarea styles */
+textarea.input {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Checkbox and Radio styles */
+input[type="checkbox"],
+input[type="radio"] {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid #d1d5db;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    border-radius: 50%;
+}
+
+    input[type="checkbox"]:checked,
+    input[type="radio"]:checked {
+        background-color: #2563eb;
+        border-color: #2563eb;
+    }
+
+.dark input[type="checkbox"],
+.dark input[type="radio"] {
+    background-color: #374151;
+    border-color: #4b5563;
+}
+
+    .dark input[type="checkbox"]:checked,
+    .dark input[type="radio"]:checked {
+        background-color: #2563eb;
+        border-color: #2563eb;
+    }
+
+/* Tooltip styles */
+.tooltip {
+    position: relative;
+}
+
+    .tooltip::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0.5rem 0.75rem;
+        background-color: #1f2937;
+        color: #ffffff;
+        font-size: 0.75rem;
+        border-radius: 0.375rem;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.15s ease-in-out;
+        z-index: 50;
+    }
+
+    .tooltip:hover::after {
+        opacity: 1;
+        visibility: visible;
+    }
+
+/* Dropdown menu styles */
+.dropdown-menu {
+    position: absolute;
+    right: 0;
+    margin-top: 0.5rem;
+    min-width: 12rem;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+}
+
+.dark .dropdown-menu {
+    background-color: #1f2937;
+    border-color: #374151;
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    text-align: left;
+    font-size: 0.875rem;
+    color: #374151;
+    transition: background-color 0.15s ease-in-out;
+}
+
+    .dropdown-item:hover {
+        background-color: #f3f4f6;
+    }
+
+.dark .dropdown-item {
+    color: #d1d5db;
+}
+
+    .dark .dropdown-item:hover {
+        background-color: #374151;
+    }
+
+
+/* Dropdown animation */
+@keyframes dropdownIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.animate-dropdown {
+    animation: dropdownIn 0.15s ease-out;
+}

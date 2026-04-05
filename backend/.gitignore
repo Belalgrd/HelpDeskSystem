@@ -1,0 +1,11 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+logs/
+uploads/
+
+## Environment
+appsettings.Development.json

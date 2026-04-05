@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<ItemGroup>
+		<ProjectReference Include="..\HelpDesk.Domain\HelpDesk.Domain.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- UPDATED: 12.0.1 → 13.0.1 (fixes vulnerability) -->
+		<PackageReference Include="AutoMapper" Version="13.0.1" />
+		<!-- REMOVED: AutoMapper.Extensions.Microsoft.DependencyInjection (merged into AutoMapper 13+) -->
+		<PackageReference Include="FluentValidation" Version="11.9.0" />
+		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
+		<PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="8.0.0" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+</Project>
